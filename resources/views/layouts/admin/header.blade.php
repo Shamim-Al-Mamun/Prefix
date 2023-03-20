@@ -3,16 +3,15 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="blue">
 
-
             <a href="{{ route('admin.dashboard') }}" class="logo">
-                <img src="{{ asset('assets/img/getup-logo.svg') }}" alt="navbar brand" class="navbar-brand">
+                {{-- <img src="{{ asset('assets/img/getup-logo.svg') }}" alt="navbar brand" class="navbar-brand"> --}}
+                <img src="{{ asset('assets/img/polli-logo.png') }}" alt="navbar brand" class="navbar-brand">
             </a>
 
             {{-- @if (!empty($header_settings->header_logo))
                 <a href="{{ route('admin.dashboard') }}" class="logo"><img
                         src="{{ url($header_settings->header_logo) }}" alt="navbar brand" class="navbar-brand"></a>
             @endif --}}
-
 
 
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
@@ -147,10 +146,14 @@
                             <p>Hero sliders</p>
                             <span class="caret"></span>
                         </a>
-                        <div class="collapse {{ in_array(request()->path(), ['dashboard/hero/addnew', 'dashboard/hero/all']) ? 'show' : '' }}"
+                        <div class="collapse {{ in_array(request()->path(), ['dashboard/hero/addnew', 'dashboard/hero/all', 'dashboard/hero/background']) ? 'show' : '' }}"
                             id="Hero">
                             <ul class="nav nav-collapse">
                                 <li>
+                                    <a class="{{ request()->is('dashboard/hero/background') ? 'bg-primary text-white ' : '' }}"
+                                        href="{{ route('admin.hero.background') }}">
+                                        <span class="sub-item">Slider background</span>
+                                    </a>
                                     <a class="{{ request()->is('dashboard/hero/all') ? 'bg-primary text-white ' : '' }}"
                                         href="{{ route('admin.hero.all') }}">
                                         <span class="sub-item">All slider</span>

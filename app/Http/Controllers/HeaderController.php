@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HeaderSettings;
+use Illuminate\Support\Facades\Storage;
 
 class HeaderController extends Controller
 {
@@ -72,5 +73,19 @@ class HeaderController extends Controller
 
         $header_settings->save();
         return redirect()->route('admin.header')->with('success', "Header Data has been update successfully.");
+    }
+
+    public function store(Request $request)
+    {
+
+        $header_settings = HeaderSettings::first();
+
+        if ($request->file('hero_img')) {
+            $hero_img  = $request->file('hero_img');
+            Storage::putFile('public/img/', $hero_img);
+            $header_settings->hero_img = "storage/img/" . $hero_img->hashName();
+        }
+        $header_settings->save();
+        return redirect()->route('admin.hero.background')->with('success', "Header Data has been update successfully.");
     }
 }

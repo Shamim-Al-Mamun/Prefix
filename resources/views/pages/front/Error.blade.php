@@ -10,10 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Site Title -->
-    <title>Xpeed - Internet Service Provider Template.</title>
+    {{-- <title>Xpeed - Internet Service Provider Template.</title> --}}
+    @if (!empty($site_settings->site_title))
+        <title> {{ $site_settings->site_title }}</title>
+    @else
+        <title>Internet Service Provider Template</title>
+    @endif
 
     <!-- Fav Icon -->
-    <link rel="icon" href="./assets/img/favicon.svg" />
+    {{-- <link rel="icon" href="./assets/img/favicon.svg" /> --}}
+
+    @if (!empty($site_settings->header_favicon))
+        {{-- {{ dd($site_settings->header_favicon) }} --}}
+        <link rel="icon" src="{{ url($site_settings->header_favicon) }}" alt="#" />
+    @endif
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />

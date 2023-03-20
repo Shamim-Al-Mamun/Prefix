@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\HeroSlider;
+use App\Models\HeaderSettings;
 
 class HeroSliderController extends Controller
 {
@@ -15,7 +16,8 @@ class HeroSliderController extends Controller
      */
     public function index()
     {
-        //
+        $headerSettings = HeaderSettings::first();
+        return view('pages.dashboard.hero.addbackimg', compact('headerSettings'));
     }
 
 

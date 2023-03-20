@@ -8970,6 +8970,12 @@ img.navbar-brand {
     height: auto;
 }
 
+.logo-header .logo .navbar-brand {
+
+    filter: brightness(0) invert(1);
+}
+
+
 a{
     text-decoration: none!important;
 }
@@ -8994,4 +9000,5 @@ a{
 input.btn.btn-danger {
     line-height: 120%;
     height: 43.78px;
+    width: 100%!important;
 }

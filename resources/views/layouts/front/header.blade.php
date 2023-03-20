@@ -38,39 +38,58 @@
 
 </div> --}}
 
-
-
 <div class="ISPTemplateV1-topbar">
     <div class="container">
         <div class="row align-items-center">
+
             <div class="col-lg-6 col-md-7 col-12">
                 <div class="ISPTemplateV1-topbar-contact">
                     <ul class="ISPTemplateV1-topbar-contact-list">
-                        <li>
-                            <a href="tel:+880 1234 567890"><i class="fi-sr-phone-call"></i>880 1234 567890</a>
-                        </li>
-                        <li>
-                            <a href="mailto:info@xplorenet.com.bd"><i
-                                    class="fi fi-sr-envelope"></i>info@xplorenet.com.bd</a>
-                        </li>
+                        @if (!empty($header_settings->header_phone))
+                            <li>
+                                <a href="{{ $header_settings->header_phone }}">
+                                    <i class="fi-sr-phone-call"></i>{{ $header_settings->header_phone }}</a>
+                            </li>
+                        @endif
+                        @if (!empty($header_settings->header_email))
+                            <li>
+                                <a href="mailto:{{ $header_settings->header_email }}"><i
+                                        class="fi fi-sr-envelope"></i>{{ $header_settings->header_email }}</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-5 col-12">
                 <div class="ISPTemplateV1-topbar-selfcare-links">
                     <ul class="ISPTemplateV1-topbar-selfcare-links-list">
-                        <li>
-                            <a href="#" target="_blank">Mobile app</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">BTRC Tarrif</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">Pay bill</a>
-                        </li>
+
+                        @if (!empty($header_settings->header_button_url))
+                            <li>
+                                <a href="{{ $header_settings->header_button_url }}"
+                                    target="_blank">{{ $header_settings->header_button }}</a>
+                            </li>
+                        @endif
+
+                        @if (!empty($header_settings->header_button_two_url))
+                            <li>
+                                <a href="{{ $header_settings->header_button_two_url }}"
+                                    target="_blank">{{ $header_settings->header_button_two }}</a>
+                            </li>
+                        @endif
+
+                        @if (!empty($header_settings->header_button_three_url))
+                            <li>
+                                <a href="{{ $header_settings->header_button_three_url }}"
+                                    target="_blank">{{ $header_settings->header_button_three }}</a>
+                            </li>
+                        @endif
+
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -149,9 +168,9 @@
                         </li>
                     </ul>
                     <div class="offcanvas-btn">
-                        {{-- <a href="{{ $header_settings->header_button_url }}"
-                            class="ISPTemplateV1-btn">{{ $header_settings->header_button }}</a> --}}
-                        <a href="#" class="ISPTemplateV1-btn">Self care</a>
+                        <a href="{{ $header_settings->header_main_button_url }}"
+                            class="ISPTemplateV1-btn">{{ $header_settings->header_main_button }}</a>
+                        {{-- <a href="#" class="ISPTemplateV1-btn">Self care</a> --}}
                     </div>
                 </nav>
                 <!-- offcanvas-menu end -->
@@ -228,9 +247,9 @@
                         </li>
                     </ul>
                     <div class="header-menu-btn">
-                        {{-- <a href="{{ $header_settings->header_button_url }}" target="_blank"
-                            class="ISPTemplateV1-btn">{{ $header_settings->header_button }}</a> --}}
-                        <a href="#" class="ISPTemplateV1-btn">Self care</a>
+                        <a href="{{ $header_settings->header_main_button_url }}" target="_blank"
+                            class="ISPTemplateV1-btn">{{ $header_settings->header_main_button }}</a>
+                        {{-- <a href="#" class="ISPTemplateV1-btn">Self care</a> --}}
                     </div>
                 </div>
             </div>

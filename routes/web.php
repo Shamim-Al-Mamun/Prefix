@@ -73,6 +73,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/header', [HeaderController::class, 'index'])->name('admin.header');
     Route::put('/header', [HeaderController::class, 'update'])->name('admin.header.update');
 
+
     // Hero Route
     Route::get('/hero/all', [HeroSliderController::class, 'all'])->name('admin.hero.all');
     Route::get('/hero/addnew', [HeroSliderController::class, 'addnew'])->name('admin.hero.addnew');
@@ -80,6 +81,9 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/hero/edit/{id}', [HeroSliderController::class, 'edit'])->name('admin.hero.edit');
     Route::post('/hero/update/{id}', [HeroSliderController::class, 'update'])->name('admin.hero.update');
     Route::delete('/hero/delete/{id}', [HeroSliderController::class, 'destroy'])->name('admin.hero.destroy');
+
+    Route::get('/hero/background', [HeroSliderController::class, 'index'])->name('admin.hero.background');
+    Route::put('/hero/background', [HeaderController::class, 'store'])->name('admin.hero.background.update');
 
     // Pricing Title
     Route::get('/media-title', [MediaTitleController::class, 'index'])->name('admin.media-title');
@@ -340,8 +344,7 @@ Route::get('/blog-{id}', [PagesController::class, 'single_blog'])->name('page.bl
 Route::get('/page-{id}', [PagesController::class, 'PageSingle'])->name('page.single');
 
 // // 404 page
-// Route::fallback([PagesController::class, 'error']);
-
+Route::fallback([PagesController::class, 'error']);
 
 
 // Route::get('/order-package', [PagesController::class, 'pricingform'])->name('pricing-form');

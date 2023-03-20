@@ -3,7 +3,7 @@
     @include('pages.front.sections.Hero.Slider')
     @include('pages.front.sections.Hero.Service')
     @include('pages.front.sections.Hero.About')
-    @include('pages.front.sections.Hero.client')
+    @include('pages.front.sections.Hero.Client')
     @include('pages.front.sections.Hero.WhatAreWe')
     @include('pages.front.sections.Hero.Explore')
     @include('pages.front.sections.Hero.Pricing')

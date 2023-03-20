@@ -475,18 +475,18 @@ class PagesController extends Controller
     }
 
     // error
-    // public function error()
-    // {
-    //     $site_settings = Settings::first();
-    //     $header_settings = HeaderSettings::first();
-    //     $footer_settings = FooterSettings::first();
-    //     // $site_page = SitePages::find($id);
-    //     $seo_settings = SeoOptimized::first();
-    //     $theme = Theme::first();
-    //     $scripts = Script::all();
+    public function error()
+    {
+        $site_settings = Settings::first();
+        $header_settings = HeaderSettings::first();
+        $footer_settings = FooterSettings::first();
+        // $site_page = SitePages::find($id);
+        $seo_settings = SeoOptimized::first();
+        $theme = Theme::first();
+        $scripts = Script::all();
 
-    //     return view('pages.front.Error', compact('site_settings', 'header_settings', 'footer_settings', 'seo_settings', 'theme', 'scripts'));
-    // }
+        return view('pages.front.Error', compact('site_settings', 'header_settings', 'footer_settings', 'seo_settings', 'theme', 'scripts'));
+    }
 
 
     public function userMessages(Request $request)

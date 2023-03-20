@@ -16,7 +16,7 @@ class WhatWeDoController extends Controller
     public function index()
     {
         $whatWeDo = WhatWeDo::first();
-        return view('pages.dashboard.whatWeDO', compact('whatWeDo'));
+        return view('pages.dashboard.whatWeDo', compact('whatWeDo'));
     }
 
     /**

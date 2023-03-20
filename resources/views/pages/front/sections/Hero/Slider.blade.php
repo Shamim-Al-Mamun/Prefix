@@ -1,5 +1,6 @@
   <!-- Hero Area -->
-  <section class="ISPTemplateV1-hero" style="background-image: url('./assets/img/hero-img/hero-bg.jpg')">
+  <section class="ISPTemplateV1-hero"
+      @if (!empty($header_settings->hero_img)) style="background-image: url('{{ url($header_settings->hero_img) }}')" @endif>
       <div class="container">
           <div class="row align-items-center">
               <div class="col-12">
